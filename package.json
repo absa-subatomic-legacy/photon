@@ -1,0 +1,38 @@
+{
+  "name": "@subatomic/photon",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Photon application",
+  "scripts": {
+    "start": "react-scripts-ts start",
+    "build": "react-scripts-ts build",
+    "test": "react-scripts-ts test --env=jsdom",
+    "eject": "react-scripts-ts eject"
+  },
+  "dependencies": {
+    "@types/jest": "^22.1.1",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-scripts-ts": "2.13.0"
+  },
+  "devDependencies": {
+    "@types/enzyme": "^3.1.8",
+    "@types/node": "^9.4.1",
+    "@types/react": "^16.0.36",
+    "@types/react-dom": "^16.0.3",
+    "enzyme": "^3.3.0",
+    "react-addons-test-utils": "^15.6.2",
+    "typescript": "^2.7.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/absa-subatomic/photon.git"
+  },
+  "author": "Subatomic Team",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/absa-subatomic/photon"
+  },
+  "homepage": "https://github.com/absa-subatomic/photon"
+}
