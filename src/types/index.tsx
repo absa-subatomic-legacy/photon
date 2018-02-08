@@ -1,4 +1,2 @@
-export interface StoreState {
-    languageName: string;
-    enthusiasmLevel: number;
-}
+export * from './project';
+export * from './enthusiasm';

@@ -9,7 +9,7 @@ export interface Props {
   onDecrement?: () => void;
 }
 
-function Profile({ name, enthusiasmLevel = 1, onIncrement, onDecrement }: Props) {
+export default function Profile({ name, enthusiasmLevel = 1, onIncrement, onDecrement }: Props) {
   if (enthusiasmLevel <= 0) {
     throw new Error('You could be a little more enthusiastic. :D');
   }
@@ -26,8 +26,6 @@ function Profile({ name, enthusiasmLevel = 1, onIncrement, onDecrement }: Props)
     </div>
   );
 }
-
-export default Profile;
 
 // helpers
 
