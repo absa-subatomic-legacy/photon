@@ -11,10 +11,13 @@
   },
   "dependencies": {
     "@types/jest": "^22.1.1",
+    "@types/react-redux": "^5.0.14",
     "enzyme-adapter-react-16": "^1.1.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "react-scripts-ts": "2.13.0"
+    "react-redux": "^5.0.6",
+    "react-scripts-ts": "2.13.0",
+    "redux": "^3.7.2"
   },
   "devDependencies": {
     "@types/enzyme": "^3.1.8",
