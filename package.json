@@ -4,6 +4,7 @@
   "version": "0.1.0",
   "description": "Photon application",
   "scripts": {
+    "precommit": "lint-staged",
     "start": "react-scripts-ts start",
     "build": "react-scripts-ts build",
     "test": "react-scripts-ts test --env=jsdom",
@@ -16,6 +17,9 @@
     "@types/react-router-redux": "^5.0.11",
     "axios": "^0.17.1",
     "enzyme-adapter-react-16": "^1.1.1",
+    "husky": "^0.14.3",
+    "lint-staged": "^6.1.0",
+    "prettier": "^1.10.2",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.6",
@@ -34,6 +38,9 @@
     "enzyme": "^3.3.0",
     "react-addons-test-utils": "^15.6.2",
     "typescript": "^2.7.1"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,json,css}": ["prettier --single-quote --write", "git add"]
   },
   "repository": {
     "type": "git",
