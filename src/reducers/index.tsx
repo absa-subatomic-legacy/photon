@@ -1,10 +1,12 @@
 import { combineReducers } from 'redux';
+import { routerReducer } from 'react-router-redux';
 
-import enthusiasm from './enthusiasm';
+import projectReducer from './project';
 
 // tslint:disable-next-line: no-any
 const rootReducer = (combineReducers as any)({
-    enthusiasm,
+    routing: routerReducer,
+    projectState: projectReducer
 });
 
 export default rootReducer;

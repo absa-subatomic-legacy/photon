@@ -1,7 +1,10 @@
 import * as React from 'react';
 import './App.css';
 
-import Profile from './components/Profile';
+import Home from './containers/Home';
+import Profile from './containers/Profile';
+
+import { Route, Link } from 'react-router-dom';
 
 const logo = require('./logo.svg');
 
@@ -14,9 +17,11 @@ class App extends React.Component {
           <h1 className="App-title">Welcome to React</h1>
         </header>
         <p className="App-intro">
-          To get started, edit <code>src/App.tsx</code> and save to reload.
+          <Link to="/">Home</Link>&nbsp;&nbsp;
+          <Link to="/profile/react">Profile</Link>
         </p>
-        <Profile name="TypeScript" enthusiasmLevel={10} />,
+        <Route exact={true} path="/" component={Home} />
+        <Route path="/profile/:name" component={Profile} />
       </div>
     );
   }

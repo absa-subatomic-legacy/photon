@@ -4,31 +4,23 @@ import './Profile.css';
 
 export interface Props {
   name: string;
-  enthusiasmLevel?: number;
-  onIncrement?: () => void;
-  onDecrement?: () => void;
+  forkProject?: (url: string) => void;
 }
 
-export default function Profile({ name, enthusiasmLevel = 1, onIncrement, onDecrement }: Props) {
-  if (enthusiasmLevel <= 0) {
-    throw new Error('You could be a little more enthusiastic. :D');
-  }
-
+export default function Profile({ name, forkProject }: Props) {
+  var click = () => {
+    if (forkProject) {
+      forkProject('https://github.com/absa-subatomic/photon');
+    }
+  };
+  
   return (
-    <div className="hello">
-      <div className="greeting">
-        Hello {name + getExclamationMarks(enthusiasmLevel)}
-      </div>
-      <div>
-        <button onClick={onDecrement}>-</button>
-        <button onClick={onIncrement}>+</button>
-      </div>
+    <div>
+      <p>
+        Hello! My name is <strong>{name}</strong>.
+        My name was passed in through a route param!
+      </p>
+      <button onClick={click}>Fork the Project</button>
     </div>
   );
-}
-
-// helpers
-
-function getExclamationMarks(numChars: number) {
-  return Array(numChars + 1).join('!');
 }

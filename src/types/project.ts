@@ -4,3 +4,7 @@ export interface Project {
     created: Date;
     forkedFromUrl: string;
 }
+
+export interface ProjectState {
+    project: Project | null;
+}

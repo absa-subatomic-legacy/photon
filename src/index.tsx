@@ -1,25 +1,22 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-// import App from './App';
-import Hello from './containers/Hello';
-import registerServiceWorker from './registerServiceWorker';
+import { Provider } from 'react-redux';
+import { ConnectedRouter } from 'react-router-redux';
+
+import App from './App';
+import store, { history } from './store';
+
 import './index.css';
 
-// import { createStore } from 'redux';
-// import { enthusiasm } from './reducers/index';
-// import { StoreState } from './types/index';
-import { configureStore } from './store';
-import { Provider } from 'react-redux';
-
-// const store = createStore<StoreState>(enthusiasm, {
-//   enthusiasmLevel: 1,
-//   languageName: 'TypeScript',
-// });
+import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render(
-  <Provider store={configureStore({})}>
-    <Hello />
+  <Provider store={store}>
+    <ConnectedRouter history={history}>
+      <App/>
+    </ConnectedRouter>
   </Provider>,
   document.getElementById('root') as HTMLElement
 );
+
 registerServiceWorker();

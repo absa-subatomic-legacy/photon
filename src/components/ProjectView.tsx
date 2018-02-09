@@ -1,32 +1,28 @@
 import * as React from 'react';
 
+import { Project } from '../types';
+
 export interface Props {
-    name: string;
-    enthusiasmLevel?: number;
+    project: Project;
 }
 
 class ProjectView extends React.Component<Props, object> {
     render() {
-        const { name, enthusiasmLevel = 1 } = this.props;
+        const { project } = this.props;
 
-        if (enthusiasmLevel <= 0) {
-            throw new Error('You could be a little more enthusiastic. :D');
+        if (project) {
+            return (
+                <p className="project">
+                    <h1>Congrats!</h1>
+                    You have successfull forked the <b>{project.title}</b> from <i>{project.forkedFromUrl}</i> on 
+                    {project.created.toString()}.<br /><br />
+                    <small>Please use the following project ID {project.id} for future references.</small>
+                </p>
+            );
+        } else {
+            return null;
         }
-
-        return (
-            <div className="hello">
-                <div className="greeting">
-                    Hello {name + getExclamationMarks(enthusiasmLevel)}
-                </div>
-            </div>
-        );
     }
 }
 
 export default ProjectView;
-
-// helpers
-
-function getExclamationMarks(numChars: number) {
-    return Array(numChars + 1).join('!');
-}
