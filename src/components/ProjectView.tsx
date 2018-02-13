@@ -12,12 +12,12 @@ class ProjectView extends React.Component<Props, object> {
 
         if (project) {
             return (
-                <p className="project">
+                <div className="project">
                     <h1>Congrats!</h1>
-                    You have successfull forked the <b>{project.title}</b> from <i>{project.forkedFromUrl}</i> on 
+                    <p>You have successfull forked the <b>{project.title}</b> from <i>{project.forkedFromUrl}</i> on 
                     {project.created.toString()}.<br /><br />
-                    <small>Please use the following project ID {project.id} for future references.</small>
-                </p>
+                    <small>Please use the following project ID {project.id} for future references.</small></p>
+                </div>
             );
         } else {
             return null;

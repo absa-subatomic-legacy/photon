@@ -10,9 +10,9 @@ export interface ForkProjectAction {
 export function forkProject(url: string) {
     // tslint:disable-next-line
     return (dispatch: any) => {
-        fork(url).then((project: Project) => {
+        return fork(url).then((project: Project) => {
             // Yay! Can invoke sync or async actions with `dispatch`
-            dispatch(forkProjectSuccess(project));
+            return dispatch(forkProjectSuccess(project));
         });
     };
 }

@@ -1,32 +1,43 @@
 import * as React from 'react';
-import { shallow } from "enzyme";
+import * as renderer from 'react-test-renderer';
+import { shallow, ShallowWrapper } from "enzyme";
 import Profile from './Profile';
 
-describe('A Profile', function() {
-  it('renders the correct text when no enthusiasm level is given', () => {
-    const hello = shallow(<Profile name="Daniel" />);
-    expect(hello.find('.greeting').text()).toEqual('Hello Daniel!');
+// Snapshot for a Profile React Component
+describe('A Snapshot of Profile Component', () => {
+  it('capturing Snapshot of Profile', () => {
+      const renderedValue = renderer.create(<Profile name="Daniel" />).toJSON();
+      expect(renderedValue).toMatchSnapshot();
+  });
+});
+
+describe('A Shallow Render of Profile Component', function() {
+  // tslint:disable-next-line: no-any
+  let wrapper: ShallowWrapper<any, any>;
+  const mockCallBack = jest.fn();
+
+  beforeEach(() => {
+    wrapper = shallow(<Profile name="Daniel" forkProject={mockCallBack}/>);
   });
 
-  // it('renders the correct text with an explicit enthusiasm of 1', () => {
-  //   const hello = shallow(<Profile name="Daniel" enthusiasmLevel={1}/>);
-  //   expect(hello.find('.greeting').text()).toEqual('Hello Daniel!');
-  // });
+  it('renders the correct text when name is given', () => {
+    const greeting = wrapper.find('.greeting');
+    expect(greeting).toBeDefined();
+    expect(greeting.length).toEqual(1);
+    expect(greeting.text()).toEqual('Hello! My name is Daniel. My name was passed in through a route param!');
+  });
 
-  // it('renders the correct text with an explicit enthusiasm level of 5', () => {
-  //   const hello = shallow(<Profile name="Daniel" enthusiasmLevel={5} />);
-  //   expect(hello.find('.greeting').text()).toEqual('Hello Daniel!!!!!');
-  // });
+  it('renders the button', () => {
+    const button = wrapper.find('button');
+    expect(button).toBeDefined();
+    expect(button.length).toEqual(1);
+    expect(button.text()).toEqual('Fork the Project');
+  });
 
-  // it('throws when the enthusiasm level is 0', () => {
-  //   expect(() => {
-  //     shallow(<Profile name="Daniel" enthusiasmLevel={0} />);
-  //   }).toThrow();
-  // });
-
-  // it('throws when the enthusiasm level is negative', () => {
-  //   expect(() => {
-  //     shallow(<Profile name="Daniel" enthusiasmLevel={-1} />);
-  //   }).toThrow();
-  // });
+  it('doesn\'t calls the output if it was not specified when click on button', () => {
+    const button = wrapper.find('button');
+    button.simulate('click');
+    expect(mockCallBack.mock.calls.length).toEqual(1);
+    expect(mockCallBack.mock.calls[0][0]).toEqual('https://github.com/absa-subatomic/photon');
+  });
 });

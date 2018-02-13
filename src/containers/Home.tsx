@@ -12,7 +12,6 @@ export interface Props {
     changePage: (name: string) => RouterAction;
 }
 
-// tslint:disable-next-line: no-any
 const Home = (props: Props) => (
     <div>
         <p>
@@ -32,19 +31,19 @@ const Home = (props: Props) => (
 );
 
 // tslint:disable-next-line: no-any
-export function mapStateToProps(state: {projectState: ProjectState}) {
+function mapStateToProps(state: {projectState: ProjectState}) {
     return {
         project: state.projectState.project,
     };
 }
 
 // tslint:disable-next-line: no-any
-const mapDispatchToProps = function (dispatch: Dispatch<any>) {
+function mapDispatchToProps(dispatch: Dispatch<any>) {
     return bindActionCreators(
         {
             changePage: (name: string) => push(`/profile/${name}`)
         },
         dispatch);
-};
+}
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);

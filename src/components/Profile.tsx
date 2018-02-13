@@ -15,8 +15,8 @@ export default function Profile({ name, forkProject }: Props) {
   };
   
   return (
-    <div>
-      <p>
+    <div className="hello">
+      <p className="greeting">
         Hello! My name is <strong>{name}</strong>.
         My name was passed in through a route param!
       </p>
