@@ -1,0 +1,60 @@
+{
+  "name": "@subatomic/photon",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Photon application",
+  "scripts": {
+    "precommit": "lint-staged",
+    "start": "react-scripts-ts start",
+    "build": "react-scripts-ts build",
+    "test": "react-scripts-ts test --env=jsdom",
+    "eject": "react-scripts-ts eject"
+  },
+  "dependencies": {
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-redux": "^5.0.6",
+    "react-router-dom": "^4.2.2",
+    "react-router-redux": "^5.0.0-alpha.9",
+    "react-scripts-ts": "2.13.0",
+    "redux": "^3.7.2",
+    "redux-thunk": "^2.2.0"
+  },
+  "devDependencies": {
+    "@types/enzyme": "^3.1.8",
+    "@types/jest": "^22.1.1",
+    "@types/node": "^9.4.1",
+    "@types/react": "^16.0.36",
+    "@types/react-dom": "^16.0.3",
+    "@types/react-redux": "^5.0.14",
+    "@types/react-router-dom": "^4.2.3",
+    "@types/react-router-redux": "^5.0.11",
+    "@types/react-test-renderer": "^16.0.0",
+    "@types/redux-mock-store": "^0.0.13",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "husky": "^0.14.3",
+    "lint-staged": "^6.1.0",
+    "prettier": "^1.10.2",
+    "react-addons-test-utils": "^15.6.2",
+    "redux-devtools-extension": "^2.13.2",
+    "redux-mock-store": "1.4.0",
+    "typescript": "^2.7.1"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,json,css}": [
+      "prettier --single-quote --write",
+      "git add"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/absa-subatomic/photon.git"
+  },
+  "author": "Subatomic Team",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/absa-subatomic/photon"
+  },
+  "homepage": "https://github.com/absa-subatomic/photon"
+}
