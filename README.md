@@ -1,6 +1,6 @@
 # The ABSA Photon project
 [![Maintainability](https://api.codeclimate.com/v1/badges/59d16a2a4668532ccbf3/maintainability)](https://codeclimate.com/github/absa-subatomic/photon/maintainability)
-[![Build Status](https://travis-ci.org/absa-subatomic/subatomic-documentation.svg?branch=master)](https://travis-ci.org/absa-subatomic/subatomic-documentation)
+[![Build Status](https://travis-ci.org/absa-subatomic/photon.svg?branch=master)](https://travis-ci.org/absa-subatomic/photon)
 
 ## WIP of the project
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
