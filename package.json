@@ -2,13 +2,23 @@
   "name": "@subatomic/photon",
   "private": true,
   "version": "0.1.0",
-  "description": "The ABSA Photon project",
+  "description": "The Photon project",
+  "author": "Subatomic Team",
+  "license": "MIT",
+  "homepage": "https://github.com/absa-subatomic/photon",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/absa-subatomic/photon.git"
+  },
+  "bugs": {
+    "url": "https://github.com/absa-subatomic/photon"
+  },
   "scripts": {
     "precommit": "lint-staged",
     "start": "react-scripts-ts start",
     "build": "react-scripts-ts build",
     "test": "react-scripts-ts test --env=jsdom",
-    "test-ci": "CI=true yarn run test --coverage --collectCoverageFrom=src/**/*.ts* --collectCoverageFrom=!src/**/*.ts*.snap",
+    "test-ci": "CI=true yarn run test --coverage",
     "eject": "react-scripts-ts eject"
   },
   "dependencies": {
@@ -48,14 +58,18 @@
       "git add"
     ]
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/absa-subatomic/photon.git"
-  },
-  "author": "Subatomic Team",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/absa-subatomic/photon"
-  },
-  "homepage": "https://github.com/absa-subatomic/photon"
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.ts*",
+      "!src/**/*.ts*.snap"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 1,
+        "functions": 1,
+        "lines": 1,
+        "statements": 1
+      }
+    }
+  }
 }
