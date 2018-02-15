@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`When visiting the homepage can navigates to the Profile page via Link 1`] = `"<p class=\\"greeting\\">Hello! My name is <strong>react</strong>. My name was passed in through a route param!</p><button data-test=\\"forkTheProject\\">Fork the Project</button>"`;
+
+exports[`When visiting the homepage can navigates to the Profile page via Redux 1`] = `"<p class=\\"greeting\\">Hello! My name is <strong>react</strong>. My name was passed in through a route param!</p><button data-test=\\"forkTheProject\\">Fork the Project</button>"`;
+
+exports[`When visiting the homepage home renders correctly 1`] = `"<div class=\\"App\\"><header class=\\"App-header\\"><img src=\\"/static/media/logo.5d5d9eef.svg\\" class=\\"App-logo\\" alt=\\"logo\\"><h1 class=\\"App-title\\">Welcome to React</h1></header><p class=\\"App-intro\\"><a data-test=\\"linkHome\\" href=\\"/\\">Home</a>&nbsp;&nbsp;<a data-test=\\"linkProfile\\" href=\\"/profile/react\\">Profile</a></p><section><p>Welcome to the React Photon Application.<br>The entire apps build using React!<br>Check out our docs on <a href=\\"https://reactjs.org\\">reactjs.org</a> to get started.</p><a href=\\"/profile/react\\"><button data-test=\\"goToProfile\\">Go to profile page via Link</button></a><button data-test=\\"goToProfileViaRedux\\">Go to profile page via redux</button></section></div>"`;

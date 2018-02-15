@@ -17,8 +17,8 @@
     "precommit": "lint-staged",
     "start": "react-scripts-ts start",
     "build": "react-scripts-ts build",
-    "test": "react-scripts-ts test --env=jsdom",
-    "test-ci": "CI=true yarn run test --coverage",
+    "test": "react-scripts-ts test --env=jsdom --runInBand",
+    "test-ci": "CI=true react-scripts-ts test --env=jsdom --runInBand --coverage",
     "eject": "react-scripts-ts eject"
   },
   "dependencies": {
@@ -42,9 +42,11 @@
     "@types/react-router-redux": "^5.0.11",
     "@types/react-test-renderer": "^16.0.0",
     "@types/redux-mock-store": "^0.0.13",
+    "chromeless": "^1.5.0",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "husky": "^0.14.3",
+    "jest-image-snapshot": "^2.3.0",
     "lint-staged": "^6.1.0",
     "prettier": "^1.10.2",
     "react-addons-test-utils": "^15.6.2",

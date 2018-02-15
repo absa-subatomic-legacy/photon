@@ -8,42 +8,49 @@ import ProjectView from '../components/ProjectView';
 import { ProjectState, Project } from '../types';
 
 export interface Props {
-    project: Project;
-    changePage: (name: string) => RouterAction;
+  project: Project;
+  changePage: (name: string) => RouterAction;
 }
 
 const Home = (props: Props) => (
-    <div>
-        <p>
-            Welcome to the React Photon Application.<br />
-            The entire apps build using React!<br />
-            Check out our docs on <a href='https://reactjs.org'>reactjs.org</a> to get started.
-        </p>
+  <section>
+    <p>
+      Welcome to the React Photon Application.<br />
+      The entire apps build using React!<br />
+      Check out our docs on <a href="https://reactjs.org">reactjs.org</a> to get
+      started.
+    </p>
 
-        <Link to="/profile/react">
-            <button>Go to profile page via Link</button>
-        </Link>
+    <Link to="/profile/react">
+      <button data-test="goToProfile">Go to profile page via Link</button>
+    </Link>
 
-        <button onClick={() => props.changePage('react')}>Go to profile page via redux</button>
+    <button
+      data-test="goToProfileViaRedux"
+      onClick={() => props.changePage('react')}
+    >
+      Go to profile page via redux
+    </button>
 
-        <ProjectView project={props.project}/>
-    </div>
+    <ProjectView project={props.project} />
+  </section>
 );
 
 // tslint:disable-next-line: no-any
-function mapStateToProps(state: {projectState: ProjectState}) {
-    return {
-        project: state.projectState.project,
-    };
+function mapStateToProps(state: { projectState: ProjectState }) {
+  return {
+    project: state.projectState.project
+  };
 }
 
 // tslint:disable-next-line: no-any
 function mapDispatchToProps(dispatch: Dispatch<any>) {
-    return bindActionCreators(
-        {
-            changePage: (name: string) => push(`/profile/${name}`)
-        },
-        dispatch);
+  return bindActionCreators(
+    {
+      changePage: (name: string) => push(`/profile/${name}`)
+    },
+    dispatch
+  );
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);
