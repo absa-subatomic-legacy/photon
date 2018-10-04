@@ -62,9 +62,9 @@
     "@types/history" "*"
     "@types/react" "*"
 
-"@types/react-test-renderer@^16.0.0":
-  version "16.0.0"
-  resolved "https://registry.yarnpkg.com/@types/react-test-renderer/-/react-test-renderer-16.0.0.tgz#905a12076d7315eb4a36c4f0e5e760c7b3115420"
+"@types/react-test-renderer@^16.0.3":
+  version "16.0.3"
+  resolved "https://registry.yarnpkg.com/@types/react-test-renderer/-/react-test-renderer-16.0.3.tgz#cce5c983d66cc5c3582e7c2f44b274ab635a8acc"
   dependencies:
     "@types/react" "*"
 
