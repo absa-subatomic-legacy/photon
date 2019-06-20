@@ -25,6 +25,10 @@
   version "9.4.2"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-9.4.2.tgz#b109a6c4f64147ccf9476d9e1a6fbf69a10faeb8"
 
+"@types/prop-types@*":
+  version "15.7.1"
+  resolved "https://registry.yarnpkg.com/@types/prop-types/-/prop-types-15.7.1.tgz#f1a11e7babb0c3cad68100be381d1e064c68f1f6"
+
 "@types/react-dom@^16.0.3":
   version "16.0.3"
   resolved "https://registry.yarnpkg.com/@types/react-dom/-/react-dom-16.0.3.tgz#8accad7eabdab4cca3e1a56f5ccb57de2da0ff64"
@@ -68,9 +72,12 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react@*", "@types/react@^16.0.36":
-  version "16.0.36"
-  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.0.36.tgz#ceb5639013bdb92a94147883052e69bb2c22c69b"
+"@types/react@*", "@types/react@^16.8.21":
+  version "16.8.21"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.8.21.tgz#aefb32519a4111964993be5b2bd3f172f81c34ff"
+  dependencies:
+    "@types/prop-types" "*"
+    csstype "^2.2.0"
 
 "@types/redux-mock-store@^0.0.13":
   version "0.0.13"
@@ -1309,6 +1316,10 @@ cssom@0.3.x, "cssom@>= 0.3.2 < 0.4.0":
   resolved "https://registry.yarnpkg.com/cssstyle/-/cssstyle-0.2.37.tgz#541097234cb2513c83ceed3acddc27ff27987d54"
   dependencies:
     cssom "0.3.x"
+
+csstype@^2.2.0:
+  version "2.6.5"
+  resolved "https://registry.yarnpkg.com/csstype/-/csstype-2.6.5.tgz#1cd1dff742ebf4d7c991470ae71e12bb6751e034"
 
 currently-unhandled@^0.4.1:
   version "0.4.1"
